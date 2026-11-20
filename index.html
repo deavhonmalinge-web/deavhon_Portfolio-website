@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Deavhon Anthony B. Malinge">
+<title>Deavhon Anthony B. Malinge | Portfolio</title>
+
+<style>
+:root {
+    --background: #0b1425;
+    --surface: #111f35;
+    --surface-light: #1b2c45;
+    --gold: #e6bd68;
+    --gold-dark: #bd9140;
+    --white: #f8f6f0;
+    --muted: #b4bdcc;
+    --border: #34445c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(11,20,37,.97);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1150px;
+    min-height: 75px;
+    margin: auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span,
+.hero h1 span,
+.section-title span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    max-width: 1150px;
+    min-height: 620px;
+    margin: auto;
+    padding: 75px 30px;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 16px 0;
+    font-size: clamp(42px, 6vw, 66px);
+    line-height: 1.15;
+}
+
+.hero h2 {
+    color: var(--gold);
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.hero-copy {
+    max-width: 590px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--gold);
+    color: #101a2b;
+    border: 2px solid var(--gold);
+    border-radius: 5px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.button:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+/* PROFILE PHOTO */
+
+.photo-area {
+    text-align: center;
+    justify-self: center;
+}
+
+.photo-frame {
+    width: 320px;
+    height: 390px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    border-radius: 160px 160px 15px 15px;
+    background: var(--surface-light);
+    box-shadow: 0 0 35px rgba(230,189,104,.20);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 85px 30px;
+    text-align: center;
+}
+
+.section-dark {
+    background: #0e1a2d;
+}
+
+.section-inner {
+    max-width: 1080px;
+    margin: auto;
+}
+
+.section-title {
+    margin-bottom: 42px;
+}
+
+.section-title h2 {
+    font-size: 37px;
+    margin-top: 8px;
+}
+
+.about-card,
+.education-card {
+    max-width: 760px;
+    margin: auto;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.about-card h3,
+.education-card h3 {
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.about-card p,
+.education-card p {
+    color: var(--muted);
+}
+
+/* SKILLS */
+
+.skills-grid,
+.projects-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.skill-card,
+.project-card {
+    padding: 27px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: left;
+    transition: .3s;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.skill-card h3,
+.project-card h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.skill-card p,
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* PROJECTS */
+
+.project-number {
+    color: var(--gold);
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    margin-bottom: 18px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--surface-light);
+    color: var(--gold);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* EDUCATION */
+
+.education-card {
+    border-left: 5px solid var(--gold);
+}
+
+/* CONTACT */
+
+.contact-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.contact-card h2 {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 23px;
+    background: #070e19;
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .hero-copy {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 10px 15px;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .photo-frame {
+        width: 260px;
+        height: 330px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card,
+    .education-card {
+        padding: 25px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+<nav class="navbar">
+    <a href="#home" class="logo">DEAVHON<span>.</span></a>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div>
+        <p class="eyebrow">
+            BSIT Student · Aspiring Web Developer
+        </p>
+
+        <h1>Hello, I'm <span>Deavhon</span></h1>
+
+        <h2>Deavhon Anthony B. Malinge</h2>
+
+        <p class="hero-copy">
+            I'm a first-year Information Technology student
+            who enjoys learning about computers, programming,
+            and web development. I'm excited to keep learning
+            and build useful projects.
+        </p>
+
+        <a href="#projects" class="button">
+            Explore My Projects
+        </a>
+    </div>
+
+    <!-- YOUR PROFILE PICTURE -->
+    <div class="photo-area">
+        <div class="photo-frame">
+            <img
+                src="Deavhon.jpg"
+                alt="Deavhon Anthony B. Malinge"
+            >
+        </div>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="section section-dark" id="about">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p class="eyebrow">Get to know me</p>
+            <h2>About <span>Me</span></h2>
+        </div>
+
+        <div class="about-card">
+            <h3>Driven by Curiosity</h3>
+
+            <p>
+                I am Deavhon Anthony B. Malinge, a first-year
+                BSIT student who enjoys discovering how
+                technology solves real problems. I am developing
+                skills through coursework, independent practice,
+                and small projects that challenge me to improve.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p class="eyebrow">What I'm learning</p>
+            <h2>My <span>Skills</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <article class="skill-card">
+                <h3>Programming Logic</h3>
+                <p>
+                    Breaking problems into clear steps
+                    and solutions.
+                </p>
+            </article>
+
+            <article class="skill-card">
+                <h3>Computer Fundamentals</h3>
+                <p>
+                    Learning how computer systems
+                    and software work.
+                </p>
+            </article>
+
+            <article class="skill-card">
+                <h3>Debugging</h3>
+                <p>
+                    Finding errors, testing fixes,
+                    and checking results.
+                </p>
+            </article>
+
+            <article class="skill-card">
+                <h3>Interface Planning</h3>
+                <p>
+                    Organizing website content to make
+                    pages easy to use.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section section-dark" id="projects">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p class="eyebrow">Practice project ideas</p>
+            <h2>My <span>Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+                <div class="project-number">01</div>
+
+                <h3>Personal Budget Tracker</h3>
+
+                <p>
+                    A beginner program idea for recording
+                    expenses and calculating the remaining budget.
+                </p>
+
+                <span class="tag">C Programming</span>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">02</div>
+
+                <h3>Class Schedule Page</h3>
+
+                <p>
+                    A webpage idea for organizing class
+                    subjects and weekly schedules.
+                </p>
+
+                <span class="tag">HTML / CSS</span>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">03</div>
+
+                <h3>Study Flashcard App</h3>
+
+                <p>
+                    A simple study app idea that displays
+                    questions and lets users reveal answers.
+                </p>
+
+                <span class="tag">JavaScript</span>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p class="eyebrow">My learning journey</p>
+            <h2><span>Education</span></h2>
+        </div>
+
+        <article class="education-card">
+
+            <h3>
+                Bachelor of Science in Information Technology
+            </h3>
+
+            <p>
+                First-year BSIT student learning programming
+                fundamentals, web development, databases,
+                computer systems, and problem-solving.
+            </p>
+
+        </article>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-dark" id="contact">
+
+    <div class="section-inner">
+
+        <div class="contact-card">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                I'm open to learning opportunities,
+                collaborations, and beginner development projects.
+            </p>
+
+            <a href="mailto:you r-email@example.com" class="button">
+                Send Me an Email
+            </a>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+        &copy; 2026 Deavhon Anthony B. Malinge.
+        All rights reserved.
+    </p>
+</footer>
+
+</body>
+</html>
